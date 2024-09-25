@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Analyzer</title>
+</head>
+<body>
+    <h1>Tweet Analyzer</h1>
+    <form method="post">
+        <label for="term">Search Term:</label>
+        <input type="text" id="term" name="term" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <h2>Analysis Results</h2>
+        <ul>
+            <li><strong>Daily Counts:</strong> {{ result.daily_counts }}</li>
+            <li><strong>Unique Users:</strong> {{ result.unique_users }}</li>
+            <li><strong>Average Likes:</strong> {{ result.average_likes }}</li>
+            <li><strong>Place IDs:</strong> {{ result.place_ids }}</li>
+            <li><strong>Times of Day:</strong> {{ result.times_of_day }}</li>
+            <li><strong>Most Active User:</strong> {{ result.most_active_user }}</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
